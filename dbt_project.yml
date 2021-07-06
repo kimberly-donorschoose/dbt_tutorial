@@ -36,3 +36,6 @@ models:
       # Applies to all files under models/example/
       example:
           materialized: view
+
+on-run-end:
+  - "{{ grant_select_on_schemas(schemas, ['transformer', 'dbt_developers'], ['looker']) }}"
