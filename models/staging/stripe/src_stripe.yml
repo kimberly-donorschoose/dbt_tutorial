@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: dbt_stripe
+    description: A clone of a stripe database
+    database: athena
+    tables:
+      - name: payment
+        description: Raw payments data
+        columns:
+          - name: id
+            description: Primary key for payments
+            tests:
+              - unique
+              - not_null
+

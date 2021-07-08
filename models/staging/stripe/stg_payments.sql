@@ -5,6 +5,6 @@ with payments as (
         orderid as order_id,
         amount,
         status
-    from dbt_stripe.payment
+    from {{ source('dbt_stripe', 'payment')}}
 )
 select * from payments
